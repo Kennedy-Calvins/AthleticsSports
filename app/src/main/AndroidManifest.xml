@@ -4,6 +4,7 @@
     package="com.example.athleticssports">
 
     <dist:module dist:instant="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,13 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Registration" />
         <activity android:name=".MyProfile" />
+        <activity android:name=".Teams" />
+        <activity android:name=".Update" />
+        <activity android:name=".AthleteComparison" />
+        <activity android:name=".Records" />
+        <activity android:name=".Time" />
+        <activity android:name=".players" />
+        <activity android:name=".RegisterTeam" />
+        <activity android:name=".RegisterAthlete" />
+        <activity android:name=".RegisterRace" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

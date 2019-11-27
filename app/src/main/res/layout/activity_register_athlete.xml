@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".RegisterAthlete">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@color/endblue">
+
+        <TextView
+            android:id="@+id/textGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="15dp"
+            android:text="Register Athlete"
+            android:textColor="@color/graylight"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="vertical"
+        >
+
+        <GridLayout
+            android:background="@drawable/bgapp"
+            android:columnCount="1"
+            android:rowCount="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_weight="8"
+            android:padding="14dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginBottom="456dp"
+                android:layout_marginLeft="66dp"
+                android:layout_marginRight="66dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/athlete_photo"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp">
+
+                    </ImageView>
+
+<!--                    <TextView-->
+<!--                        android:text="Select Athlete photo"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/colorPrimaryDark"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"></TextView>-->
+
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="33dp">
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Athlete Name"
+            android:inputType="text"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/startblue">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/athlete_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="33dp">
+
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Athlete Phone No"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/startblue">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/athlete_phone_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone">
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="33dp">
+
+
+        <TextView
+            android:id="@+id/team"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Team"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/startblue">
+
+        </TextView>
+
+        <Spinner
+            android:id="@+id/team_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+    </LinearLayout>
+
+
+
+
+    <Button
+        android:id="@+id/register_athlete"
+        android:textColor="#fff"
+        android:text="Register Athlete"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:textAllCaps="false"
+        android:background="@drawable/buttonstyleithgradient"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+
+        >
+
+    </Button>
+
+
+
+</LinearLayout>

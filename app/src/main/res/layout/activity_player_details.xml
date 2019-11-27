@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bgapp"
+    android:weightSum="10"
+    tools:context=".player_details">
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/endblue">
+
+        <TextView
+            android:id="@+id/textGrid"
+            android:paddingTop="10dp"
+            android:text="Athlete details"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/graylight"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:columnCount="1"
+            android:rowCount="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_weight="8"
+            android:padding="14dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="56dp"
+            android:layout_marginLeft="86dp"
+            android:layout_marginRight="86dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
+            <LinearLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/mtu"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp">
+
+                </ImageView>
+
+                <TextView
+                    android:text="Player 1"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:text="Marathon Type"
+                android:textStyle="bold"
+                android:textColor="@color/startblue">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text = "100M-Sprint">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:text="Appearances"
+                android:textStyle="bold"
+                android:textColor="@color/startblue">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text = "20">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:text="Record time"
+                android:textStyle="bold"
+                android:textColor="@color/startblue">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text = "2h 00 Min">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:text="Wins"
+                android:textStyle="bold"
+                android:textColor="@color/startblue">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text = "2">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:text="County"
+                android:textStyle="bold"
+                android:textColor="@color/startblue">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text = "Kisumu">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

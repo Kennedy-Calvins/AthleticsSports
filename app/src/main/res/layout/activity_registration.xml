@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:weightSum="10"
     android:background="@drawable/bgapp"
-    tools:context=".WelcomeActivity">
-
+    tools:context=".Registration">
 
     <ImageView
         android:src="@drawable/logoapp"
@@ -19,13 +18,12 @@
 
     </ImageView>
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textSize="35sp"
-        android:text="Login"
+        android:text="Register"
         android:layout_marginTop="25dp"
         android:textStyle="bold"
         android:textColor="@color/graylight"
@@ -37,7 +35,23 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/full_names"
+            android:layout_marginTop="50dp"
+            android:layout_width="288dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bginput"
+            android:hint="Full name"
+            android:layout_gravity="center_horizontal"
+            android:inputType="text"
+            android:paddingStart="20dp"
+
+
+
+            />
+
 
         <EditText
             android:id="@+id/text_Email"
@@ -45,12 +59,16 @@
             android:layout_width="288dp"
             android:layout_height="40dp"
             android:background="@drawable/bginput"
-            android:hint="Email Address"
             android:layout_gravity="center_horizontal"
+            android:hint="Email Address"
             android:inputType="textEmailAddress"
             android:paddingStart="20dp"
 
+
+
             />
+
+
 
         <EditText
             android:id="@+id/password"
@@ -62,7 +80,28 @@
             android:layout_gravity="center_horizontal"
             android:inputType="textPassword"
             android:paddingStart="20dp"
+
+
+
             />
+
+        <EditText
+            android:id="@+id/password1"
+            android:layout_marginTop="50dp"
+            android:layout_width="288dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bginput"
+            android:hint="Confirm Password"
+            android:layout_gravity="center_horizontal"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+
+
+
+            />
+
+
+
 
     </LinearLayout>
 
@@ -72,35 +111,21 @@
         android:layout_height="wrap_content"
         android:visibility="gone" />
 
-
     <Button
         android:id="@+id/get_started"
-        android:layout_width="288dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="65dp"
-        android:background="@drawable/buttonstyleithgradient"
+        android:textColor="#fff"
         android:text="Get Started"
-        android:textAllCaps="false"
-        android:textColor="#fff"
-
-        >
-
-    </Button>
-
-    <Button
-        android:id="@+id/Get_Register"
-        android:layout_width="288dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="55dp"
         android:background="@drawable/buttonstyleithgradient"
-        android:text="Get Registered!"
-        android:textAllCaps="false"
-        android:textColor="#fff"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
 
         >
 
     </Button>
+
+
+
 
 </LinearLayout>

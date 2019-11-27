@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".RegisterTeam">
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/endblue">
+
+        <TextView
+            android:id="@+id/textGrid"
+            android:paddingTop="15dp"
+            android:text="Register Team"
+            android:textSize="20sp"
+            android:textColor="@color/graylight"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="vertical"
+        >
+
+        <GridLayout
+            android:background="@drawable/bgapp"
+            android:columnCount="1"
+            android:rowCount="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_weight="8"
+            android:padding="14dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginBottom="456dp"
+                android:layout_marginLeft="66dp"
+                android:layout_marginRight="66dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/athlete_photo"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp">
+
+                    </ImageView>
+
+                    <!--                    <TextView-->
+                    <!--                        android:text="Select Athlete photo"-->
+                    <!--                        android:textAlignment="center"-->
+                    <!--                        android:textColor="@color/colorPrimaryDark"-->
+                    <!--                        android:textSize="18sp"-->
+                    <!--                        android:textStyle="bold"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"></TextView>-->
+
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:paddingLeft="15dp"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="35dp">-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="36dp"-->
+    <!--            android:layout_height="36dp"-->
+    <!--            android:src="@drawable/ic_lock_outline_black_24dp">-->
+
+    <!--        </ImageView>-->
+
+
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/password"-->
+    <!--            android:hint="Password"-->
+    <!--            android:background="@drawable/bginput"-->
+    <!--            android:paddingLeft="10dp"-->
+    <!--            android:layout_width="288dp"-->
+    <!--            android:layout_height="40dp"-->
+    <!--            android:inputType="textPassword"-->
+    <!--            android:layout_gravity="center_horizontal"-->
+    <!--            >-->
+
+    <!--        </EditText>-->
+
+
+    <!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp">
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Team Name:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/startblue">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/team_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp">
+
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Team Manager:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/startblue">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/team_manager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp">
+
+
+        <TextView
+            android:id="@+id/county"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="County"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/startblue">
+
+        </TextView>
+
+        <Spinner
+            android:id="@+id/spinner_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp">
+
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/startblue">
+
+        </TextView>
+
+        <Spinner
+            android:id="@+id/spinner_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+    </LinearLayout>
+
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="360dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="45dp">-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/distance"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Marathon Type"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/startblue">-->
+
+<!--        </TextView>-->
+
+<!--        <Spinner-->
+<!--            android:id="@+id/spinner_marathon"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </Spinner>-->
+
+<!--    </LinearLayout>-->
+
+
+    <Button
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/buttonstyleithgradient"
+        android:text="Save Changes"
+        android:textColor="#fff"
+
+        >
+
+    </Button>
+
+
+</LinearLayout>
