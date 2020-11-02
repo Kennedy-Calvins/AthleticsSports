@@ -50,6 +50,8 @@
             android:padding="14dp">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/selectplayerone"
+                android:clickable="true"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
@@ -79,7 +81,7 @@
                     </ImageView>
 
                     <TextView
-                        android:text="Player 1"
+                        android:text="Select Athlete"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="18sp"
@@ -93,6 +95,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/selectplayer2"
+                android:clickable="true"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
@@ -122,7 +126,7 @@
                     </ImageView>
 
                     <TextView
-                        android:text="Player 2"
+                        android:text="Select Athlete"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="18sp"
@@ -171,7 +175,7 @@
                 android:textSize="17sp"
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
-                android:text="10"
+                android:text="0"
                 android:textStyle="bold">
 
             </TextView>
@@ -200,17 +204,63 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:text = " 20">
+                android:text = "0">
 
             </TextView>
 
         </LinearLayout>
 
+<!--        <LinearLayout-->
+<!--            android:layout_width="360dp"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_gravity="center">-->
+
+<!--            <TextView-->
+<!--                android:background="@color/graylight"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="0.2"-->
+<!--                android:textAlignment="center"-->
+<!--                android:padding="8dp"-->
+<!--                android:textSize="17sp"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="10 km"-->
+<!--                android:textStyle="bold"></TextView>-->
+<!--            <TextView-->
+<!--                android:background="@color/graylight"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="0.6"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:textAlignment="center"-->
+<!--                android:padding="8dp"-->
+<!--                android:textSize="17sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:text = "Distance"-->
+<!--                android:textColor="@color/startblue"-->
+<!--                ></TextView>-->
+<!--            <TextView-->
+<!--                android:background="@color/graylight"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="0.2"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:textAlignment="center"-->
+<!--                android:padding="8dp"-->
+<!--                android:textSize="17sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:text = "20 km"></TextView>-->
+
+
+<!--        </LinearLayout>-->
+
         <LinearLayout
             android:layout_width="360dp"
             android:layout_height="56dp"
             android:orientation="horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center">
 
             <TextView
@@ -220,56 +270,10 @@
                 android:textAlignment="center"
                 android:padding="8dp"
                 android:textSize="17sp"
-                android:gravity="center_vertical"
-                android:layout_height="match_parent"
-                android:text="10 km"
-                android:textStyle="bold"></TextView>
-            <TextView
-                android:background="@color/graylight"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:padding="8dp"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:gravity="center_vertical"
-                android:text = "Distance"
-                android:textColor="@color/startblue"
-                ></TextView>
-            <TextView
-                android:background="@color/graylight"
-                android:layout_width="0dp"
-                android:layout_weight="0.2"
-                android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:padding="8dp"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:gravity="center_vertical"
-                android:text = "20 km"></TextView>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="360dp"
-            android:layout_height="56dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp"
-            android:layout_gravity="center">
-
-            <TextView
-                android:background="@color/graylight"
-                android:layout_width="0dp"
-                android:layout_weight="0.2"
-                android:textAlignment="center"
-                android:padding="8dp"
-                android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
-                android:text="6"></TextView>
+                android:text="0"></TextView>
             <TextView
                 android:background="@color/graylight"
                 android:layout_width="0dp"
@@ -292,7 +296,7 @@
                 android:padding="8dp"
                 android:textSize="17sp"
                 android:gravity="center_vertical"
-                android:text = "4"
+                android:text = "0"
                 android:textStyle="bold"></TextView>
 
         </LinearLayout>
@@ -301,7 +305,7 @@
             android:layout_width="360dp"
             android:layout_height="56dp"
             android:orientation="horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center">
 
             <TextView
@@ -314,11 +318,11 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:textStyle="bold"
-                android:text=""></TextView>
+                android:text="--"></TextView>
             <TextView
                 android:background="@color/graylight"
                 android:layout_width="0dp"
-                android:layout_weight="0.6"
+                android:layout_weight="0.1"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
                 android:padding="8dp"
@@ -338,7 +342,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:text = ""></TextView>
+                android:text = "--"></TextView>
 
         </LinearLayout>
 
@@ -346,7 +350,7 @@
             android:layout_width="360dp"
             android:layout_height="56dp"
             android:orientation="horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center">
 
             <TextView
@@ -359,7 +363,7 @@
                 android:textStyle="bold"
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
-                android:text=""></TextView>
+                android:text="--"></TextView>
             <TextView
                 android:background="@color/graylight"
                 android:layout_width="0dp"
@@ -383,7 +387,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:text = "">
+                android:text = "--">
             </TextView>
         </LinearLayout>
 
@@ -391,7 +395,7 @@
             android:layout_width="360dp"
             android:layout_height="56dp"
             android:orientation="horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center">
 
             <TextView
@@ -404,7 +408,7 @@
                 android:textStyle="bold"
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
-                android:text="H/bay">
+                android:text="--">
             </TextView>
             <TextView
                 android:background="@color/graylight"
@@ -429,7 +433,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:text = "Narok">
+                android:text = "--">
             </TextView>
         </LinearLayout>
 

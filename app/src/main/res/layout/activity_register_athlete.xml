@@ -169,7 +169,7 @@
         </TextView>
 
         <Spinner
-            android:id="@+id/team_name"
+            android:id="@+id/spinner_team_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </Spinner>
@@ -180,7 +180,8 @@
 
 
     <Button
-        android:id="@+id/register_athlete"
+        android:id="@+id/save_athlete"
+        android:onClick="SaveTheAthlete"
         android:textColor="#fff"
         android:text="Register Athlete"
         android:textStyle="bold"

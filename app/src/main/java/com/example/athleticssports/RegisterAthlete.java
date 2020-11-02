@@ -11,9 +11,11 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +24,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -42,9 +45,14 @@ public class RegisterAthlete extends AppCompatActivity {
     FirebaseStorage storage;
     StorageReference storageReference;
     DatabaseReference databaseReference;
+    ValueEventListener listener;
+    ArrayAdapter<String> adapter;
+    ArrayAdapter<String> spinnerDatalist;
     AthleteDetails athleteDetails;
+    Spinner spinner;
     EditText name, PhoneNo;
-    Button buttonsave;
+    String textName = "";
+    Button buttonSaveAthlete;
 
 
 
@@ -55,35 +63,35 @@ public class RegisterAthlete extends AppCompatActivity {
 
         name = (EditText)findViewById(R.id.athlete_name);
         PhoneNo = (EditText)findViewById(R.id.athlete_phone_no);
-        buttonsave = (Button)findViewById(R.id.register_athlete);
+        spinner = (Spinner)findViewById(R.id.spinner_team_name);
+        buttonSaveAthlete = (Button)findViewById(R.id.save_athlete);
 
         athleteDetails = new AthleteDetails();
+
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference("AthleteDetails");
 
 
-        buttonsave.setOnClickListener(new View.OnClickListener() {
+        buttonSaveAthlete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //               addAthlete();
 
-                Long athletePhone = Long.parseLong(PhoneNo.getText().toString().trim());
+                Toast.makeText(RegisterAthlete.this,"Athlete registered succesfully ",Toast.LENGTH_LONG).show();
 
+                storage = FirebaseStorage.getInstance();
+                storageReference = storage.getReference("Athlete Photo");
 
-                athleteDetails.setAthleteName(name.getText().toString().trim());
-                athleteDetails.setAthletePhoneNo(athletePhone);
-
-
-                databaseReference.push().setValue(athleteDetails);
-                Toast.makeText(RegisterAthlete.this,"Data inserted succesfully ",Toast.LENGTH_LONG).show();
+                uploadImage();
 
 
             }
         });
 
         //Firebase Init
-        storage = FirebaseStorage.getInstance();
-        storageReference = storage.getReference();
+//        storage = FirebaseStorage.getInstance();
+//        storageReference = storage.getReference("Athlete Photo");
 
 
 
@@ -94,7 +102,7 @@ public class RegisterAthlete extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 chooseImage();
-                uploadImage();
+
             }
         });
     }
@@ -130,13 +138,28 @@ public class RegisterAthlete extends AppCompatActivity {
     }
 
     public void uploadImage(){
+
+        String imageid;
+        imageid = "images/"+ UUID.randomUUID().toString();
+
+        Long athletePhone = Long.parseLong(PhoneNo.getText().toString().trim());
+
+
+        athleteDetails.setAthleteName(name.getText().toString().trim());
+        athleteDetails.setAthletePhoneNo(athletePhone);
+        athleteDetails.setImageid(imageid);
+
+
+        databaseReference.push().setValue(athleteDetails);
+
+
         if (filePath != null){
 
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading Athlete Photo...");
             progressDialog.show();
 
-            StorageReference ref = storageReference.child("images/"+ UUID.randomUUID().toString());
+            StorageReference ref = storageReference.child(imageid);
             ref.putFile(filePath)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -187,4 +210,18 @@ public class RegisterAthlete extends AppCompatActivity {
     }
 
 
+//    public void SaveTheAthlete(View view) {
+//
+//        textName = name.getText().toString().trim();
+//        databaseReference.push().setValue(textName).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                name.setText("");
+//                Toast.makeText(RegisterAthlete.this, "", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//
+//
+//    }
 }

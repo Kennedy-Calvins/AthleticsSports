@@ -17,8 +17,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -41,8 +44,9 @@ public class RegisterTeam extends AppCompatActivity {
     StorageReference storageReference;
     DatabaseReference databaseReference;
     TeamDetails teamDetails;
-    EditText name, ManagerName;
-    Button buttonsave;
+    EditText Tname, ManagerName;
+    Button  buttonSaveTeam;
+    long teamID=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,31 +54,56 @@ public class RegisterTeam extends AppCompatActivity {
         setContentView(R.layout.activity_register_team);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("TeamDetails");
-
-        name = (EditText)findViewById(R.id.team_name);
-        ManagerName = (EditText)findViewById(R.id.team_manager);
-        buttonsave = (Button)findViewById(R.id.register_athlete);
-
-        teamDetails = new TeamDetails();
-
-        buttonsave.setOnClickListener(new View.OnClickListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    teamID = (dataSnapshot.getChildrenCount());
+                }
+            }
 
-                //addTeam();
-
-                teamDetails.setTeamName(name.getText().toString().trim());
-                teamDetails.setTeamManager(ManagerName.getText().toString().trim());
-
-                databaseReference.push().setValue(teamDetails);
-                Toast.makeText(RegisterTeam.this,"Team Registered Succesfully!",Toast.LENGTH_LONG).show();
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
 
+        Tname = (EditText)findViewById(R.id.team_name);
+        ManagerName = (EditText)findViewById(R.id.team_manager);
+        buttonSaveTeam = (Button)findViewById(R.id.save_team);
+
+        teamDetails = new TeamDetails();
+
+        buttonSaveTeam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                teamDetails.setTeamName(Tname.getText().toString().trim());
+                teamDetails.setTeamManager(ManagerName.getText().toString().trim());
+
+                databaseReference.child(String.valueOf(teamID+1)).setValue(teamDetails);
+
+                databaseReference.push().setValue(teamDetails);
+                Toast.makeText(RegisterTeam.this,"Team registered succesfully ",Toast.LENGTH_LONG).show();
+
+
+            }
+        });
+
+
+
+                //addTeam();
+
+//                teamDetails.setTeamName(name.getText().toString().trim());
+//                teamDetails.setTeamManager(ManagerName.getText().toString().trim());
+//
+//                databaseReference.push().setValue(teamDetails);
+//                Toast.makeText(RegisterTeam.this,"Team Registered Succesfully!",Toast.LENGTH_LONG).show();
+
+
+
         //Firebase Init
         storage = FirebaseStorage.getInstance();
-        storageReference = storage.getReference();
+        storageReference = storage.getReference("TeamDetails");
 
 
 
@@ -97,18 +126,22 @@ public class RegisterTeam extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"Select Athlete Photo"),PICK_IMAGE_REQUEST);
+        startActivityForResult(Intent.createChooser(intent,"Select Team photo"),PICK_IMAGE_REQUEST);
 
     }
 
     public void uploadImage(){
+
+        String logoID;
+        logoID = "images/"+ UUID.randomUUID().toString();
+
         if (filePath != null){
 
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading Team Photo...");
             progressDialog.show();
 
-            StorageReference ref = storageReference.child("images/"+ UUID.randomUUID().toString());
+            StorageReference ref = storageReference.child(logoID);
             ref.putFile(filePath)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override

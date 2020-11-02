@@ -92,12 +92,12 @@ public class Teams extends AppCompatActivity {
     }
 
     public void openViewAthlete(){
-        Intent intent = new Intent(this, players.class);
+        Intent intent = new Intent(this, ViewTeam.class);
         startActivity(intent);
     }
 
     public void openSetRace(){
-        Intent intent = new Intent(this, Time.class);
+        Intent intent = new Intent(this, StopWatch.class);
         startActivity(intent);
     }
 

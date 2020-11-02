@@ -105,7 +105,84 @@
             <TextView
                 android:background="@color/graylight"
                 android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:text="Athlete Name"
+                android:textStyle="bold"
+                android:textColor="@color/startblue">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
                 android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text = "Eliud Kipchoge">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:text="Team"
+                android:textStyle="bold"
+                android:textColor="@color/startblue">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text = "Iten">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:background="@color/graylight"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
                 android:textAlignment="center"
                 android:padding="8dp"
                 android:textSize="17sp"
@@ -127,45 +204,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:text = "100M-Sprint">
-
-            </TextView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="360dp"
-            android:layout_height="56dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center">
-
-            <TextView
-                android:background="@color/graylight"
-                android:layout_width="0dp"
-                android:layout_weight="0.3"
-                android:textAlignment="center"
-                android:padding="8dp"
-                android:textSize="17sp"
-                android:gravity="center_vertical"
-                android:layout_height="match_parent"
-                android:text="Appearances"
-                android:textStyle="bold"
-                android:textColor="@color/startblue">
-
-            </TextView>
-
-            <TextView
-                android:background="@color/graylight"
-                android:layout_width="0dp"
-                android:layout_weight="0.3"
-                android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:padding="8dp"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:gravity="center_vertical"
-                android:text = "20">
+                android:text = "0h 00 Min">
 
             </TextView>
 
@@ -182,46 +221,7 @@
             <TextView
                 android:background="@color/graylight"
                 android:layout_width="0dp"
-                android:layout_weight="0.3"
-                android:textAlignment="center"
-                android:padding="8dp"
-                android:textSize="17sp"
-                android:gravity="center_vertical"
-                android:layout_height="match_parent"
-                android:text="Record time"
-                android:textStyle="bold"
-                android:textColor="@color/startblue">
-
-            </TextView>
-
-            <TextView
-                android:background="@color/graylight"
-                android:layout_width="0dp"
-                android:layout_weight="0.3"
-                android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:padding="8dp"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:gravity="center_vertical"
-                android:text = "2h 00 Min">
-
-            </TextView>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="360dp"
-            android:layout_height="56dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center">
-
-            <TextView
-                android:background="@color/graylight"
-                android:layout_width="0dp"
-                android:layout_weight="0.3"
+                android:layout_weight="0.2"
                 android:textAlignment="center"
                 android:padding="8dp"
                 android:textSize="17sp"
@@ -243,7 +243,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:text = "2">
+                android:text = "0">
 
             </TextView>
 
@@ -260,7 +260,7 @@
             <TextView
                 android:background="@color/graylight"
                 android:layout_width="0dp"
-                android:layout_weight="0.3"
+                android:layout_weight="0.2"
                 android:textAlignment="center"
                 android:padding="8dp"
                 android:textSize="17sp"
@@ -275,14 +275,14 @@
             <TextView
                 android:background="@color/graylight"
                 android:layout_width="0dp"
-                android:layout_weight="0.3"
+                android:layout_weight="0.4"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
                 android:padding="8dp"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:text = "Kisumu">
+                android:text = "Elgeyo Marakwet">
 
             </TextView>
 

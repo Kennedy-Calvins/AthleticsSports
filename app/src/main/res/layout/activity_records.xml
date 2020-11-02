@@ -112,7 +112,7 @@
         </TextView>
 
         <Spinner
-            android:id="@+id/spinner_dropdown"
+            android:id="@+id/spinner_county"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </Spinner>

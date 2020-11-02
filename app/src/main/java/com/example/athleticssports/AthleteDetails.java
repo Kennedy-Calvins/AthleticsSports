@@ -1,8 +1,13 @@
 package com.example.athleticssports;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 public class AthleteDetails {
 
     int athleteID;
+    String Imageid;
     String athleteName;
     String athleteTeam;
     String county;
@@ -13,8 +18,9 @@ public class AthleteDetails {
 
     }
 
-    public AthleteDetails(int athleteID, String athleteName, Long athletePhoneNo) {
+    public AthleteDetails(int athleteID, String Imageid, String athleteName, Long athletePhoneNo) {
         this.athleteID = athleteID;
+        this.Imageid = Imageid;
         this.athleteName = athleteName;
         this.athletePhoneNo = athletePhoneNo;
     }
@@ -25,6 +31,14 @@ public class AthleteDetails {
 
     public void setAthleteID(int athleteID) {
         this.athleteID = athleteID;
+    }
+
+    public String getImageid() {
+        return Imageid;
+    }
+
+    public void setImageid(String imageid) {
+        Imageid = imageid;
     }
 
     public String getAthleteName() {
@@ -51,8 +65,9 @@ public class AthleteDetails {
 //        this.county = county;
 //    }
 
-    public Long getAthletePhoneNo() {
-        return athletePhoneNo;
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public int getAthletePhoneNo() {
+        return Math.toIntExact(athletePhoneNo);
     }
 
     public void setAthletePhoneNo(Long athletePhoneNo) {

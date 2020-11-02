@@ -4,6 +4,7 @@
     package="com.example.athleticssports">
 
     <dist:module dist:instant="true" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,12 +14,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".ViewTeam"></activity>
+        <activity android:name=".StopWatch" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".AddData" />
+        <activity android:name=".WelcomeActivity">
+
         </activity>
         <activity android:name=".Registration" />
         <activity android:name=".MyProfile" />
@@ -26,13 +46,16 @@
         <activity android:name=".Update" />
         <activity android:name=".AthleteComparison" />
         <activity android:name=".Records" />
-        <activity android:name=".Time" />
+        <activity android:name=".Time">
+
+            <!-- <action android:name="android.intent.action.VIEW"/> -->
+
+        </activity>
         <activity android:name=".players" />
         <activity android:name=".RegisterTeam" />
         <activity android:name=".RegisterAthlete" />
         <activity android:name=".RegisterRace" />
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.example.athleticssports;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -10,19 +11,56 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.ArrayList;
+
 public class Records extends AppCompatActivity {
 
     //Spinner spinner;
+    Spinner spinner, spinner1, spinner2, spinner3 ;
+    FirebaseStorage storage;
+    StorageReference storageReference;
+    DatabaseReference databaseReference;
+    String textName = "";
+    ValueEventListener listener;
+    ArrayAdapter<String> adapter;
+    ArrayList<String> spinnerDatalist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records);
 
-//        Spinner spinner = (Spinner) findViewById(R.id.spinner_dropdown);
-//        Spinner spinner1 = (Spinner) findViewById(R.id.spinner_category);
-//        Spinner spinner2 = (Spinner) findViewById(R.id.spinner_gender);
-//        Spinner spinner3 = (Spinner)findViewById(R.id.spinner_marathon);
+        spinner = (Spinner) findViewById(R.id.spinner_county);
+        spinner1 = (Spinner) findViewById(R.id.spinner_category);
+        spinner2 = (Spinner) findViewById(R.id.spinner_gender);
+        spinner3 = (Spinner)findViewById(R.id.spinner_marathon);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Counties");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Category");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Gender");
+        databaseReference = FirebaseDatabase.getInstance().getReference("MarathonType");
+
+        spinnerDatalist = new ArrayList<>();
+        adapter = new ArrayAdapter<String>(Records.this, android.R.layout.simple_spinner_dropdown_item, spinnerDatalist);
+
+        spinner.setAdapter(adapter);
+        spinner1.setAdapter(adapter);
+        spinner2.setAdapter(adapter);
+        spinner3.setAdapter(adapter);
+
+        retrieveData();
+
+
+
+
 //
 //
 //
@@ -74,5 +112,26 @@ public class Records extends AppCompatActivity {
 //        public void onNothingSelected(AdapterView<?> parent) {
 //
 //        }
+    }
+
+    public void retrieveData(){
+        listener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot item:dataSnapshot.getChildren()){
+
+                    spinnerDatalist.add(item.getValue().toString());
+                }
+
+                adapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
